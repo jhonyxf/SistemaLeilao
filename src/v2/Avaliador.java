@@ -1,38 +1,22 @@
-/*
- * Código fonte reproduzido do livro 
- * Testes Automatizados: um guia prático
- * Maurício Aniche
- * Casa do Código
- * http://www.casadocodigo.com.br/products/livro-testes-de-software
- */
-package v2;
+   private Double menorDeTodos = Double.POSITIVE_INFINITY;
 
-/**
- *
- * @author curcino
- */
+       public void avalia(Leilao leilao) {
+               for (Lance lance: leilao.getLances()) {
+	                   if (lance.getValor() > maiorDeTodos) {
+			                       maiorDeTodos = lance.getValor();
+					                   } if (lance.getValor() < menorDeTodos) {
+							                       menorDeTodos = lance.getValor();
+									                   }
+											           }
+												       }
 
-public class Avaliador {
-    
-    private Double maiorDeTodos = Double.NEGATIVE_INFINITY;
-    private Double menorDeTodos = Double.POSITIVE_INFINITY;
+												           public Double getMaiorLance() {
+													           return maiorDeTodos;
+														       }
 
-    public void avalia(Leilao leilao) {
-        for (Lance lance: leilao.getLances()) {
-            if (lance.getValor() > maiorDeTodos) {
-                    maiorDeTodos = lance.getValor();
-            } if (lance.getValor() < menorDeTodos) {
-                    menorDeTodos = lance.getValor();
-            }
-        }
-    }
+														           public Double getMenorLance() {
 
-    public Double getMaiorLance() {
-        return maiorDeTodos;
-    }
+															         return menorDeTodos;
+																     }
 
-    public Double getMenorLance() {
-        return menorDeTodos;
-    }
-    
-}
+
